@@ -6,11 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import maf.mobile.tugasfrontend.data.Movies
+import maf.mobile.tugasfrontend.navigation.Nav
+import maf.mobile.tugasfrontend.screen.HomeScreen
 import maf.mobile.tugasfrontend.ui.theme.TugasFrontEndTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,9 +22,19 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Tigz()
+                    Nav()
                 }
             }
         }
     }
 }
+
+//@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+//@Composable
+//fun Tiqz(navigateToProfile: (Movies) -> Unit) {
+//    Scaffold(
+//        content = {
+//            TiqzHomeScreen(navigateToProfile = navigateToProfile)
+//        }
+//    )
+//}

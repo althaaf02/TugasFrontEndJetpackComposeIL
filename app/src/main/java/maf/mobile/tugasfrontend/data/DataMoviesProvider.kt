@@ -19,7 +19,7 @@ object DataMoviesProvider {
     )
 
     val movieList = listOf(
-        movie,  Movies(
+         movie, Movies(
             id = 2,
             title = "Godzilla x Kong: The New Empire",
             description = " Jenis Film : Action, Sci-Fi\n" +

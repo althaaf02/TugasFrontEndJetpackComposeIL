@@ -1,8 +1,6 @@
-package maf.mobile.tugasfrontend
+package maf.mobile.tugasfrontend.component
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,13 +18,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportCallback.Default
-import maf.mobile.tugasfrontend.data.DataMoviesProvider
 import maf.mobile.tugasfrontend.data.DataMoviesProvider.movie
 import maf.mobile.tugasfrontend.data.Movies
 
 @Composable
-fun MovieListItem(movies: Movies, navigateToProfile: (Movies) -> Unit) {
+fun MovieListItem(movies: Movies) {
     Card(
         modifier = Modifier
             .padding(8.dp)
@@ -37,9 +33,7 @@ fun MovieListItem(movies: Movies, navigateToProfile: (Movies) -> Unit) {
         shape = RoundedCornerShape(corner = CornerSize(12.dp))
 
     ) {
-        Row(
-            Modifier.clickable { navigateToProfile(movie) }
-        ){
+        Row{
             MovieImage(movies = movies)
             Column(
                 modifier = Modifier
@@ -59,7 +53,7 @@ fun MovieImage(movies: Movies) {
         painter = painterResource(id = movies.moviesImageId),
         contentDescription = "movie",
         modifier = Modifier
-            .padding(0.dp,16.dp)
+            .padding(0.dp, 16.dp)
             .size(95.dp)
     )
 }
